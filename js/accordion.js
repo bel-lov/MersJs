@@ -29,4 +29,21 @@ btns.forEach((btnItem, index) => {
     })
 })
 
+btns.forEach((btnItem, index) => {
+    btnItem.addEventListener('click', () => {
 
+        lists.forEach((listItem) => {
+            listItem.classList.add('hidden')
+        })
+        if (btnItem.classList.contains("feature__link_active") === true) {
+            btnItem.classList.remove('feature__link_active')
+        } else {
+            btns.forEach((btnItem) => {
+                btnItem.classList.remove('feature__link_active')
+            })
+            btnItem.classList.add('feature__link_active')
+            lists[index].classList.remove('hidden')
+        }
+
+    })
+})
